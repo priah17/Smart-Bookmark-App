@@ -1,9 +1,9 @@
 
 # 📚 Smart Bookmark App
 
-A simple, secure, and real-time bookmark manager built with **Next.js**, **Supabase**, and **Google OAuth**.
+A simple Smart Bookmark Manager built using Next.js and Supabase with Google OAuth authentication.
 
-🔗 **Live App:** https://smart-bookmark-1a30xyj5y-priah17s-projects.vercel.app
+✅ The application is successfully deployed on Vercel and publicly accessible
 
 ---
 
@@ -35,4 +35,6 @@ A simple, secure, and real-time bookmark manager built with **Next.js**, **Supab
 This project is fully deployed and working in production on Vercel.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+🔗 **Live App:** https://smart-bookmark-1a30xyj5y-priah17s-projects.vercel.app
 
