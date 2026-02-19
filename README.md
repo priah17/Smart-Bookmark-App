@@ -33,12 +33,12 @@ Users can log in with Google and manage their personal bookmarks securely
 ## Local Setup Guide
 Follow these steps to run the project locally.
 
-1️⃣ Clone Repository
+### 1️⃣ Clone Repository
 git clone https://github.com/YOUR_USERNAME/smart-bookmark-app.git
 cd smart-bookmark-app
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
 npm install
-3️⃣ Create Supabase Project
+### 3️⃣ Create Supabase Project
 
 Go to https://app.supabase.com
 
@@ -46,7 +46,7 @@ Create a new project
 
 Wait until initialization completes
 
-4️⃣ Get Supabase API Keys
+### 4️⃣ Get Supabase API Keys
 
 Supabase Dashboard → Settings → API
 
@@ -56,7 +56,7 @@ Project URL
 
 anon public key
 
-5️⃣ Create Environment File
+### 5️⃣ Create Environment File
 
 Create a file in the project root:
 
@@ -66,7 +66,7 @@ Add:
 
 NEXT_PUBLIC_SUPABASE_URL=YOUR_PROJECT_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_ANON_KEY
-6️⃣ Create Database Table
+### 6️⃣ Create Database Table
 
 Open Supabase → SQL Editor → Run:
 
@@ -76,20 +76,9 @@ create table bookmarks (
   url text not null,
   user_id uuid references auth.users(id),
   created_at timestamptz default now()
-);
-7️⃣ Enable Row Level Security
-alter table bookmarks enable row level security;
+); 
 
-Add policy:
-
-create policy "users manage own bookmarks"
-on bookmarks
-for all
-using (auth.uid() = user_id)
-with check (auth.uid() = user_id);
-8️⃣ Enable Realtime
-alter publication supabase_realtime add table bookmarks;
-9️⃣ Enable Google OAuth
+### 7️⃣ Enable Google OAuth
 
 Supabase → Authentication → Providers → Google → Enable
 
@@ -99,7 +88,7 @@ http://localhost:3000/auth/v1/callback
 
 Save settings.
 
-🔟 Run the App
+### 8️⃣Run the App
 npm run dev
 
 Open:
@@ -111,8 +100,6 @@ Login with Google and start using the app.
 ## Deployment Status
 
 This project is fully deployed and working in production on Vercel.
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 🔗 **Live App:** https://smart-bookmark-1a30xyj5y-priah17s-projects.vercel.app
 
